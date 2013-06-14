@@ -1,0 +1,17 @@
+package com.example.mysampleproject.db
+
+database SampleDB {
+
+	migration {
+		create table artists (
+			_id integer primary key autoincrement,
+			name text
+		);
+		
+		create view artists_view as
+			select 
+				a._id as _id,
+				a.name as name
+			from artists as a;
+	}
+}
